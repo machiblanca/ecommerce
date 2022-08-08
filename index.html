@@ -9,8 +9,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/peticiones.js"></script>    <script src="js/nav.js"></script>
-
+ 
     <title>E-COMMERCE</title>
     <style>
         .col, .col-sem-9{
@@ -50,28 +51,9 @@ nav{
 
 
 <!--- -->
-<div class="row" style="background: white;">
-    <div class="col">
-      <nav class="navbar navbar-expand-md navbar-light bg-light ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav2 mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-
-    <div class="col-sm-9">
+<div class="row" style="background: #ffffffad;">
+    
+    <div class="col-sm-12">
             
 <div id="demo" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -94,18 +76,39 @@ nav{
         </div>
 
 </div>
-
-
+  
+<div class="btn-group btn-group-lg">
+  <button type="button" class="btn btn-primary" onclick="getAll()">Ver todos los productos</button>
+  <button type="button" class="btn btn-primary" onclick="getCategorias()">Categorias</button>
+</div>
 <div class="row" id="tarjetas"></div>
+<div  id="categorias"></div>
 
+  
+</div>
         <!----->
-       
+        <button type="button"   onclick="getProduct(1)"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-header" id="modal-header">
+     
+      </div>
+      
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+     
+      </div>
+  </div>
+</div>
 
-
-  <footer class="blockquote-footer">
-    <small class="text-muted">
-      Someone famous in <cite title="Source Title">Source Title</cite>
-    </small>
+  <footer class="footer">
+    Elaborado por Blanca Delia Islas Garcia 2022
+   
   </footer>
 
     <!-- Optional JavaScript -->
@@ -113,6 +116,10 @@ nav{
     <script src="js/jquery-3.2.1.slim.min.js" ></script>
     <script src="js/popper.min.js" ></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/get.js"></script>   <script src="js/bootstrap-input-spinner.js"></script>
+    <script>
+        $("input[type='number']").inputSpinner()
+    </script>
 
   </body>
 </html>

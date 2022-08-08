@@ -8,52 +8,92 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/carrito.css">
     <script src="js/peticiones.js"></script>    <script src="js/nav.js"></script>
 
     <title>E-COMMERCE</title>
-    <style>
-        .col, .col-sem-9{
-          padding: 0;
-        }
-        .navbar-nav2, .navbar {
-          list-style: none;
-          color: black;
-        }   
-body{
-  background-image: url('img/17545.jpg');
-}
-body::before{
-  position: relative;
-  background: #ffffff54;
-}
-nav{
-  background: #ffffff54;
-
-}
-
-        
-    @media (min-width: 768px){
-.navbar-expand-md .navbar-nav2 {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: column;
-}
-
-    }
-
-    </style>
+   
 
   </head>
-  <body onload=loadDoc()>
+  <body onload=loadCarrito()>
+    <div class='container'>
+      <div class='window'>
+       <div> <h2>Resumen de compras</h2></div> 
+        <div class='order-info'>
+          <div class='order-info-content' id="compras">
+           
+            
+            <div class='total'>
+              <span style='float:left;'>
+                TOTAL
+              </span>
+              <span id='total' style='float:right; text-align:right;'>
+                
+              </span>
+            </div>
+    </div>
+    </div>
+            <div class='credit-info'>
+              <div class='credit-info-content'>
+                <table class='half-input-table'>
+                  <tr><td>Selecciona tarjeta: </td><td><div class='dropdown' id='card-dropdown'><div class='dropdown-btn' id='current-card'>Visa</div>
+                    <div class='dropdown-select'>
+                    <ul>
+                      <li>Master Card</li>
+                      <li>American Express</li>
+                      </ul></div>
+                    </div>
+                   </td></tr>
+                </table>
+                <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
+                Numero de tarjeta
+                <input class='input-field'></input>
+                Nombre
+                <input class='input-field'></input>
+                <table class='half-input-table'>
+                  <tr>
+                    <td> Expiracion
+                      <input class='input-field'></input>
+                    </td>
+                    <td>CVV
+                      <input class='input-field'></input>
+                    </td>
+                  </tr>
+                </table>
+                <button class='pay-btn'>Pagar</button>
     
+              </div>
+    
+            </div>
+          </div>
+    </div>
+    <!--
     <div class="container">
     <div class="row">
         <div class="card col-9">
 
+
         </div>
         <div class="card col-3">
             <h4>Resumen</h4>
+            <div class="card">
+              <div class="row">
+                <div class="col"> <img src="img/carrito-de-compras.png" alt="" width="10%"></div>
+                <div class="col-9"> <p>texto info</p></div>
+                <div class="col-3"> <p>$11.1</p></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div class="col"> <img src="img/carrito-de-compras.png" alt="" width="10%"></div>
+                <div class="col-9"> <p>texto info</p></div>
+                <div class="col-3"> <p>$11.1</p></div>
+              </div>
+            </div>
+
+            <div class="container">
+              <h5>Total: <strong>$11.1</strong></h5>
+            </div>
 
         </div>
 
@@ -67,7 +107,7 @@ nav{
     <small class="text-muted">
       Someone famous in <cite title="Source Title">Source Title</cite>
     </small>
-  </footer>
+  </footer>-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
