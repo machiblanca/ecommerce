@@ -9,7 +9,10 @@ function getProduct(id){
     const obj = JSON.parse(this.responseText);
     const div = document.createElement("div"); // informacion a modal de descripcion
     div.className = "modal-body";
-    div.innerHTML="<img class='card-img-top' src='"+obj.image+"' alt='Card image' style='width: 45%'>"+ "<h5>"+ obj.description +"</h5>";
+    div.innerHTML="<img class='card-img-top' src='"+obj.image+"' alt='Card image' style='width: 45%'>"+ "<h5>"+ obj.description +"</h5>" +'<h3 class="card-text" style="font-weight: revert;font-style: italic;">$'+ obj.price+'</h3>'+
+    '<div class="input-group  "><button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button><input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder=""><button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button></div>'+
+    '<a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
+    '</div><div class="modal-footer"><button type="button" id="close" class="btn btn-secondary" style="cursor:pointer"data-dismiss="modal">cerrar</button></div>' ;
     document.getElementById("modal-content").appendChild(div);
     const div2 = document.createElement("div");
     div2.className = "modal-title";
@@ -90,7 +93,7 @@ function getAll() { // crea elementos de productos
           '</h4><img class="card-img-top" src="'+ obj[i].image +' " alt="Card image" style="width: 45%">'
           +'<h3 class="card-text" style="font-weight: revert;font-style: italic;">$'+ obj[i].price+'</h3>'+
        '<div class="input-group  "><button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button><input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder=""><button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button></div>'+
-       ' <button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#exampleModal">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
+       ' <button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#descripcion">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
        '</div>' ;
             }
             for (let i = 10; i <18; i++) {
@@ -103,7 +106,7 @@ function getAll() { // crea elementos de productos
                 '</h4><img class="card-img-top" src="'+ obj[i].image +' " alt="Card image" style="width: 45%">'
                 +'<h3 class="card-text" style="font-weight: revert;font-style: italic;">$'+ obj[i].price+'</h3>'+
                 '<div class="input-group  "><button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button><input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder=""><button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button></div>'+
-             '<button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#exampleModal">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
+             '<button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#descripcion">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
              '</div>' ;
                   }
         }
