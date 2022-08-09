@@ -16,3 +16,38 @@
     border: 1px solid #76768099;
     font-style: oblique;
   }
+  
+  .col, .col-sem-9{
+    padding: 0;
+  }
+  .navbar-nav2, .navbar {
+    list-style: none;
+    color: black;
+  }   
+body{
+background-image: url('../img/17545.jpg');
+}
+body::before{
+position: relative;
+background: #ffffff54;
+}
+nav{
+background: #ffffff54;
+
+}
+.modal-body{
+    text-align: center;
+}
+#modal-header {
+    background: #87ccff;
+  }
+  
+@media (min-width: 768px){
+.navbar-expand-md .navbar-nav2 {
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: row;
+flex-direction: column;
+}
+
+}

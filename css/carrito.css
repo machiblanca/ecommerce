@@ -7,7 +7,7 @@
             color: black;
           }   
   body{
-    background-image: url('img/17545.jpg');
+    background-image: url('../img/17545.jpg');
   }
   body::before{
     position: relative;

@@ -1,4 +1,4 @@
-
+//funciones get que devuelven elementos
 function getProduct(id){
     const xhttp = new XMLHttpRequest();
     
@@ -7,9 +7,9 @@ function getProduct(id){
     xhttp.send();
     xhttp.onload = function() {
     const obj = JSON.parse(this.responseText);
-    const div = document.createElement("div");
+    const div = document.createElement("div"); // informacion a modal de descripcion
     div.className = "modal-body";
-    div.innerHTML="<h5>"+ obj.description +"</h5>";
+    div.innerHTML="<img class='card-img-top' src='"+obj.image+"' alt='Card image' style='width: 45%'>"+ "<h5>"+ obj.description +"</h5>";
     document.getElementById("modal-content").appendChild(div);
     const div2 = document.createElement("div");
     div2.className = "modal-title";
@@ -47,7 +47,7 @@ console.log("https://fakestoreapi.com/products/category/"+name);
 
   }
 
-function getCategorias() {
+function getCategorias() { //nombre de categorias
     document.getElementById("tarjetas").style.display="none";
     document.getElementById("categorias").style.display="block";
     const xhttp = new XMLHttpRequest();
@@ -69,7 +69,7 @@ function getCategorias() {
     }
 }
 
-function getAll() {
+function getAll() { // crea elementos de productos
     document.getElementById("categorias").style.display="none";
     document.getElementById("tarjetas").style.display="flex";
     const xhttp = new XMLHttpRequest();
@@ -79,7 +79,7 @@ function getAll() {
     xhttp.send();
     xhttp.onload = function() {
     const obj = JSON.parse(this.responseText);
-
+//son 20 productos pero por motivos de accesos al api lo dividi en dos for
     for (let i = 0; i <10; i++) {
           const div = document.createElement("div");
           div.className = "card col-sm-4";
@@ -90,7 +90,7 @@ function getAll() {
           '</h4><img class="card-img-top" src="'+ obj[i].image +' " alt="Card image" style="width: 45%">'
           +'<h3 class="card-text" style="font-weight: revert;font-style: italic;">$'+ obj[i].price+'</h3>'+
        '<div class="input-group  "><button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button><input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder=""><button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button></div>'+
-       ' <button type="button"   onclick="getProduct('+obj[i].id+')"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
+       ' <button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#exampleModal">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
        '</div>' ;
             }
             for (let i = 10; i <18; i++) {
@@ -102,7 +102,8 @@ function getAll() {
                 '<h4 class="card-title">'+ obj[i].title +
                 '</h4><img class="card-img-top" src="'+ obj[i].image +' " alt="Card image" style="width: 45%">'
                 +'<h3 class="card-text" style="font-weight: revert;font-style: italic;">$'+ obj[i].price+'</h3>'+
-             '<a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
+                '<div class="input-group  "><button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button"><strong>−</strong></button><input type="text" inputmode="decimal" style="text-align: center" class="form-control " placeholder=""><button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus" type="button"><strong>+</strong></button></div>'+
+             '<button type="button"   onclick="getProduct('+obj[i].id+')"class="btn " data-toggle="modal" data-target="#exampleModal">Descripcion</button><a href="#" class="btn btn-primary">Agregar a carrito</a></div>'+
              '</div>' ;
                   }
         }

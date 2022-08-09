@@ -1,4 +1,5 @@
-
+//Funciones que se cargan previo a la carga de index y carrito
+//uso de API GRatis fakestore
 function loadDoc() {
     const xhttp = new XMLHttpRequest();
     
@@ -7,7 +8,7 @@ function loadDoc() {
     xhttp.send();
     xhttp.onload = function() {
     const obj = JSON.parse(this.responseText);
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {//al ejecutar ajax se usan 4 productos para carrusel
       const div = document.createElement("div");
       if(i == 1){ div.className = "carousel-item active"; 
       }else{
@@ -32,12 +33,11 @@ function loadDoc() {
     const obj = JSON.parse(this.responseText);
 
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) { //se crean elementos para el carrito
           const div = document.createElement("table");
           div.className = "order-table";
           div.id=obj[i].id;
           total=total+obj[i].price;
-  //div.textContent = `Item número ${i}`;
           document.getElementById("compras").appendChild(div);
           div.innerHTML =  '  <tbody><tr> <td><img src="'+obj[i].image+'" class="full-width"></img></td>'+
         '<td><br> <span class="thin">'+obj[i].category+'</span><br> descripcion<br></span></td>'+

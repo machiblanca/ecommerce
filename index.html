@@ -10,65 +10,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/peticiones.js"></script>    <script src="js/nav.js"></script>
- 
-    <title>E-COMMERCE</title>
-    <style>
-        .col, .col-sem-9{
-          padding: 0;
-        }
-        .navbar-nav2, .navbar {
-          list-style: none;
-          color: black;
-        }   
-body{
-  background-image: url('img/17545.jpg');
-}
-body::before{
-  position: relative;
-  background: #ffffff54;
-}
-nav{
-  background: #ffffff54;
-
-}
-
-        
-    @media (min-width: 768px){
-.navbar-expand-md .navbar-nav2 {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: column;
-}
-
-    }
-
-    </style>
-
-  </head>
+    <script src="js/peticiones.js"></script>  
+     <script src="js/nav.js"></script>
+     <title>E-COMMERCE</title>
+      </head>
   <body onload=loadDoc()>
 
 
 <!--- -->
-<div class="row" style="background: #ffffffad;">
+<div class="row" style="background: #ffffffad; padding-top: 12%;">
     
     <div class="col-sm-12">
             
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div id="carrus" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#carrus" data-slide-to="0" class="active"></li>
+      <li data-target="#carrus" data-slide-to="1"></li>
+      <li data-target="#carrus" data-slide-to="2"></li>
     </ul>
     <div class="carousel-inner" id="carruselProductos">
  
     
     </div>
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <a class="carousel-control-prev" href="#carrus" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
+    <a class="carousel-control-next" href="#carrus" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
   </div>
@@ -86,10 +53,7 @@ nav{
 
   
 </div>
-        <!----->
-        <button type="button"   onclick="getProduct(1)"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Launch demo modal
-        </button> 
+ 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
